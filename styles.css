@@ -13,6 +13,9 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 * {
@@ -20,4 +23,60 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-family);
+}
+
+a {
+  text-decoration: none;
+  color: var(--grayish-blue);
+}
+
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+header {
+  width: 70vw;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--grayish-blue);
+  justify-content: space-between;
+}
+
+.logo-and-nav,
+.cart-and-pfp {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.cart-and-pfp {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav {
+  margin-left: 50px;
+}
+
+.cart-box {
+  display: none;
+}
+
+.nav-links {
+  width: 0px;
+  margin-right: 30px;
+  padding-bottom: 50px;
+}
+
+.nav-links:hover {
+  border-bottom: 3px solid var(--orange-bg);
+}
+
+.pfp {
+  margin-left: 50px;
+  width: 40px;
 }
