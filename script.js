@@ -45,6 +45,7 @@ function addToCart(num) {
               <button class="btn-checkout">Checkout</button>`;
 }
 
+// Removing Items from Cart
 function deleteCart() {
   cartInside.innerHTML = `<p class="cart-description-box">Empty Cart</p>`;
 }
@@ -67,8 +68,23 @@ function cartOps(event) {
   }
 }
 
-// Cart Open and Close
+// Set Overlay when clicked on main image
+function setOverlay() {
+  overlayImg.setAttribute("src", `${mainImg.getAttribute("src")}`);
+  overlay.classList.add("active-overlay");
+}
 
+// Remove overlay
+function removeOverlay(event) {
+  if (overlay.classList.contains("active-overlay")) {
+    if (event.target === overlayImg) return;
+    else {
+      overlay.classList.remove("active-overlay");
+    }
+  }
+}
+
+// Cart Open and Close
 document.addEventListener("click", function (event) {
   cartOps(event);
 });
@@ -113,20 +129,6 @@ imageBox.addEventListener("click", function (event) {
   if (target.classList.contains("thumbnail-img"))
     target.classList.add("current-img");
 });
-
-function setOverlay() {
-  overlayImg.setAttribute("src", `${mainImg.getAttribute("src")}`);
-  overlay.classList.add("active-overlay");
-}
-
-function removeOverlay(event) {
-  if (overlay.classList.contains("active-overlay")) {
-    if (event.target === overlayImg) return;
-    else {
-      overlay.classList.remove("active-overlay");
-    }
-  }
-}
 
 mainImg.addEventListener("click", setOverlay);
 
