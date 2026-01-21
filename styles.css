@@ -143,3 +143,39 @@ nav {
   opacity: 1;
   pointer-events: all;
 }
+
+main {
+  width: 70vw;
+  display: flex;
+  padding-top: 100px;
+}
+
+.images {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: 400px 100px;
+  gap: 10px;
+  grid-row-gap: 30px;
+}
+
+.main-img,
+.thumbnail-img {
+  border-radius: 10px;
+}
+
+.main-img {
+  width: 400px;
+  grid-column: 1 / 5;
+  justify-self: center;
+}
+
+.thumbnail-img {
+  width: 80px;
+  justify-self: center;
+}
+
+.current-img {
+  border: 2px solid var(--orange-bg);
+  opacity: 0.6;
+}
