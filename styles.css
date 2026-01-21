@@ -310,10 +310,10 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.8);
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -348,6 +348,9 @@ main {
 }
 
 @media (max-width: 1200px) {
+  body {
+    position: relative;
+  }
   nav {
     display: none;
   }
@@ -397,6 +400,10 @@ main {
   .product-heading {
     font-size: 28px;
     margin: 15px 0 25px 0;
+  }
+  .overlay-img {
+    width: 400px;
+    border-radius: 10px;
   }
 }
 
@@ -457,5 +464,9 @@ main {
   }
   .btn-add-cart {
     width: 250px;
+  }
+  .overlay-img {
+    width: 250px;
+    border-radius: 10px;
   }
 }
