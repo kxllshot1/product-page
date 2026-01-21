@@ -97,6 +97,7 @@ nav {
   transition: all 0.25s ease-in-out;
   transform: translateY(200px);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background: var(--white);
   border-radius: 15px;
   width: 400px;
   position: absolute;
@@ -148,6 +149,8 @@ nav {
   font-size: 14px;
   background: var(--orange-bg);
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid var(--orange-bg);
 }
 
 .btn-checkout {
@@ -260,11 +263,10 @@ main {
   align-items: center;
   gap: 10px;
   justify-content: center;
-  transition: all 0.15s ease-in-out;
-  border: 2px solid var(--orange-bg);
 }
 
-.btn-add-cart:hover {
+.btn-add-cart:hover,
+.btn-checkout:hover {
   background: none;
   font-size: 16px;
   color: var(--orange-bg);
@@ -273,6 +275,12 @@ main {
 
 .btn-add-cart-img {
   width: 15px;
+}
+
+.btn-add-cart:active,
+.btn-checkout:active {
+  background: var(--orange-bg);
+  color: var(--white);
 }
 
 .product-quantity {
