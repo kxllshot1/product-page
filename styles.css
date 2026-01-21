@@ -304,3 +304,28 @@ main {
 #quantity {
   pointer-events: none;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease-in-out;
+}
+
+.overlay-img {
+  width: 600px;
+  border-radius: 10px;
+}
+
+.active-overlay {
+  opacity: 1;
+  pointer-events: all;
+}

@@ -16,6 +16,8 @@ const allDisplayImages = document.querySelectorAll(".display-img");
 const allThumbnailImages = document.querySelectorAll(".thumbnail-img");
 const mainImg = document.querySelector(".main-img");
 const imageBox = document.querySelector(".images");
+const overlay = document.querySelector(".overlay");
+const overlayImg = document.querySelector(".overlay-img");
 
 // Functions
 //Adding items to Cart
@@ -108,5 +110,27 @@ imageBox.addEventListener("click", function (event) {
   allThumbnailImages.forEach((thumbnail) =>
     thumbnail.classList.remove("current-img"),
   );
-  target.classList.add("current-img");
+  if (target.classList.contains("thumbnail-img"))
+    target.classList.add("current-img");
+});
+
+function setOverlay() {
+  overlayImg.setAttribute("src", `${mainImg.getAttribute("src")}`);
+  overlay.classList.add("active-overlay");
+}
+
+function removeOverlay(event) {
+  if (overlay.classList.contains("active-overlay")) {
+    if (event.target === overlayImg) return;
+    else {
+      overlay.classList.remove("active-overlay");
+    }
+  }
+}
+
+mainImg.addEventListener("click", setOverlay);
+
+overlay.addEventListener("click", function (event) {
+  if (event.target === overlayImg) return;
+  else overlay.classList.remove("active-overlay");
 });
