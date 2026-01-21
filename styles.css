@@ -30,6 +30,17 @@ a {
   color: var(--grayish-blue);
 }
 
+input {
+  background: none;
+  outline: none;
+  border: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: inherit;
+  color: inherit;
+}
+
 button {
   background: transparent;
   outline: none;
@@ -129,14 +140,18 @@ nav {
   margin-left: 10px;
 }
 
-.btn-checkout {
-  width: 100%;
+.btn-checkout,
+.btn-add-cart {
   padding: 15px 30px;
   text-align: center;
   font-weight: 600;
   font-size: 14px;
   background: var(--orange-bg);
   border-radius: 10px;
+}
+
+.btn-checkout {
+  width: 100%;
 }
 
 .cart-active {
@@ -162,6 +177,8 @@ main {
 .main-img,
 .thumbnail-img {
   border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
 
 .main-img {
@@ -175,7 +192,107 @@ main {
   justify-self: center;
 }
 
+.thumbnail-img:hover {
+  opacity: 0.7;
+}
+
 .current-img {
   border: 2px solid var(--orange-bg);
   opacity: 0.6;
+}
+
+.product-info {
+  width: 50%;
+  padding-top: 50px;
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dark-gray-blue);
+  letter-spacing: 2px;
+}
+
+.product-heading {
+  font-size: 38px;
+  margin: 20px 0 30px 0;
+}
+
+.product-about {
+  font-size: 18px;
+  color: var(--dark-gray-blue);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.price {
+  display: inline;
+}
+
+.off {
+  background: var(--dark-blue);
+  color: var(--white);
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 15px;
+  font-size: 10px;
+}
+
+.prev-price {
+  margin-top: 5px;
+  color: var(--grayish-blue);
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.add-to-cart {
+  display: flex;
+  gap: 10px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.btn-add-cart {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  transition: all 0.15s ease-in-out;
+  border: 2px solid var(--orange-bg);
+}
+
+.btn-add-cart:hover {
+  background: none;
+  font-size: 16px;
+  color: var(--orange-bg);
+  border: 2px solid var(--orange-bg);
+}
+
+.btn-add-cart-img {
+  width: 15px;
+}
+
+.product-quantity {
+  background: var(--light-grayish-blue);
+  padding: 15px 20px;
+  border-radius: 10px;
+  transition: all 0.25s ease-in-out;
+}
+
+.product-quantity:hover {
+  background: var(--dark-blue);
+  color: var(--white);
+}
+
+.btn-quantity {
+  color: var(--orange-bg);
+  font-size: 20px;
+  transition: all 0.25s ease-in-out;
+}
+
+#quantity {
+  pointer-events: none;
 }

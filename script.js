@@ -22,8 +22,26 @@ const cartBoxHtml = `<!-- <div class="cart-box-in">
               </div>
               <button class="btn-checkout">Checkout</button> -->`;
 
+const cartBox = document.querySelector(".cart-box");
+const inputProductQuantity = document.querySelector("#quantity");
+const quantityBox = document.querySelector(".product-quantity");
+const btnIncrease = document.querySelector(".increase-quant");
+const btnDecrease = document.querySelector(".decrease-quant");
+const btnQuantity = document.querySelectorAll(".btn-quantity");
 const btnCart = document.querySelector(".btn-cart-header");
 btnCart.addEventListener("click", function () {
-  const cartBox = document.querySelector(".cart-box");
   cartBox.classList.toggle("cart-active");
+});
+btnIncrease.addEventListener("click", function () {
+  let num = Number(inputProductQuantity.value);
+  if (num >= 5) return;
+  num++;
+  inputProductQuantity.value = num;
+});
+
+btnDecrease.addEventListener("click", function () {
+  let num = Number(inputProductQuantity.value);
+  if (num <= 0) return;
+  num--;
+  inputProductQuantity.value = num;
 });
