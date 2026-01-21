@@ -13,6 +13,9 @@ const btnCart = document.querySelector(".btn-cart-header");
 const cartInside = document.querySelector(".cart-inside");
 const btnAddToCart = document.querySelector(".btn-add-cart");
 const allDisplayImages = document.querySelectorAll(".display-img");
+const allThumbnailImages = document.querySelectorAll(".thumbnail-img");
+const mainImg = document.querySelector(".main-img");
+const imageBox = document.querySelector(".images");
 
 // Functions
 //Adding items to Cart
@@ -95,4 +98,15 @@ cartInside.addEventListener("click", function (event) {
   const btnEmptyCart = event.target.closest(".btn-empty-cart");
   if (!btnEmptyCart) return;
   deleteCart();
+});
+
+imageBox.addEventListener("click", function (event) {
+  const target = event.target;
+  if (target.classList.contains("thumbnail-img")) {
+    mainImg.setAttribute("src", `${target.getAttribute("data-main-img")}`);
+  }
+  allThumbnailImages.forEach((thumbnail) =>
+    thumbnail.classList.remove("current-img"),
+  );
+  target.classList.add("current-img");
 });
