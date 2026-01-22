@@ -165,3 +165,13 @@ window.addEventListener("resize", function (event) {
     headerMobile.classList.remove("mobile-active");
   }
 });
+
+imageBox.addEventListener("click", function (event) {
+  allThumbnailImages.forEach((image) => {
+    if (event.target === image)
+      mainImg.setAttribute(
+        "src",
+        `${event.target.getAttribute("data-main-img")}`,
+      );
+  });
+});
