@@ -331,6 +331,8 @@ main {
   pointer-events: all;
 }
 
+/* <!-- Implementing Hamburger Menu Now--> */
+
 /* Responsiveness */
 @media (max-width: 1800px) {
   header {
