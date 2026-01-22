@@ -3,6 +3,7 @@
 // Adding HTML for adding items to Cart.
 
 // DOM Selections
+const body = document.querySelector("body");
 const inputProductQuantity = document.querySelector("#quantity");
 const quantityBox = document.querySelector(".product-quantity");
 const btnIncrease = document.querySelector(".increase-quant");
@@ -143,10 +144,12 @@ const hamburger = document.querySelector(".nav-menu");
 const closeBtn = document.querySelector(".close-nav");
 hamburger.addEventListener("click", function () {
   headerMobile.classList.add("mobile-active");
+  body.style.overflowY = "hidden";
   hamburger.style.display = "none";
   closeBtn.style.display = "block";
 });
 closeBtn.addEventListener("click", function () {
+  body.style.overflowY = "scroll";
   headerMobile.classList.remove("mobile-active");
   hamburger.style.display = "block";
   closeBtn.style.display = "none";
@@ -156,6 +159,7 @@ window.addEventListener("resize", function (event) {
   if (event.target.innerWidth > 1200) {
     hamburger.style.display = "none";
     closeBtn.style.display = "none";
+    body.style.overflowY = "scroll";
   } else {
     hamburger.style.display = "block";
     headerMobile.classList.remove("mobile-active");

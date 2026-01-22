@@ -478,6 +478,10 @@ main {
   .header-mobile {
     width: 250px;
   }
+  .cart-box {
+    top: -150px;
+    width: 350px;
+  }
   main {
     width: 90vw;
   }
@@ -554,12 +558,5 @@ main {
 @media (max-width: 350px) {
   .logo-img {
     width: 80px;
-  }
-}
-
-@media (min-width: 1201px) {
-  .nav-menu,
-  .close-nav {
-    display: none;
   }
 }
