@@ -13,10 +13,20 @@
     <title>Product Page</title>
   </head>
   <body>
-    <!-- Implementing Hamburger Menu Now-->
+    <!-- Implementing Hamburger Menu-->
     <header>
+      <button class="nav-menu">
+        <img src="images/bars-solid-full.svg" alt="" class="hamburger-img" />
+      </button>
+      <button class="close-nav">
+        <img
+          src="images/x-solid-full.svg"
+          class="hamburger-img close-img"
+          alt=""
+        />
+      </button>
       <div class="logo-and-nav">
-        <img src="images/logo.svg" alt="" />
+        <img src="images/logo.svg" class="logo-img" alt="" />
         <nav>
           <a href="#" class="nav-links">Collections</a>
           <a href="#" class="nav-links">Men</a>
@@ -28,7 +38,7 @@
       <div class="cart-and-pfp">
         <div class="cart">
           <button class="btn-cart-header">
-            <img src="images/icon-cart.svg" alt="" />
+            <img src="images/icon-cart.svg" class="cart-img-header" alt="" />
           </button>
           <div class="cart-box">
             <h3 class="cart-heading">Cart</h3>
@@ -40,6 +50,15 @@
         <img src="images/image-avatar.png" alt="" class="pfp" />
       </div>
     </header>
+    <div class="header-mobile">
+      <nav class="nav-mobile">
+        <a href="#" class="nav-link-mobile">Collections</a>
+        <a href="#" class="nav-link-mobile">Men</a>
+        <a href="#" class="nav-link-mobile">Women</a>
+        <a href="#" class="nav-link-mobile">About</a>
+        <a href="#" class="nav-link-mobile">Contact</a>
+      </nav>
+    </div>
     <main>
       <div class="images">
         <img src="images/image-product-1.jpg" alt="" class="main-img" />
@@ -47,7 +66,7 @@
           src="images/image-product-1-thumbnail.jpg"
           alt=""
           data-main-img="images/image-product-1.jpg"
-          class="img-1 thumbnail-img current-img display-img"
+          class="img-1 thumbnail-img display-img"
         />
         <img
           src="images/image-product-2-thumbnail.jpg"

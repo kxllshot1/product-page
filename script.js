@@ -118,17 +118,17 @@ cartInside.addEventListener("click", function (event) {
   deleteCart();
 });
 
-imageBox.addEventListener("click", function (event) {
-  const target = event.target;
-  if (target.classList.contains("thumbnail-img")) {
-    mainImg.setAttribute("src", `${target.getAttribute("data-main-img")}`);
-  }
-  allThumbnailImages.forEach((thumbnail) =>
-    thumbnail.classList.remove("current-img"),
-  );
-  if (target.classList.contains("thumbnail-img"))
-    target.classList.add("current-img");
-});
+// imageBox.addEventListener("click", function (event) {
+//   const target = event.target;
+//   if (target.classList.contains("thumbnail-img")) {
+//     mainImg.setAttribute("src", `${target.getAttribute("data-main-img")}`);
+//   }
+//   allThumbnailImages.forEach((thumbnail) =>
+//     thumbnail.classList.remove("current-img"),
+//   );
+//   if (target.classList.contains("thumbnail-img"))
+//     target.classList.add("current-img");
+// });
 
 mainImg.addEventListener("click", setOverlay);
 
@@ -138,3 +138,26 @@ overlay.addEventListener("click", function (event) {
 });
 
 /* <!-- Implementing Hamburger Menu Now--> */
+const headerMobile = document.querySelector(".header-mobile");
+const hamburger = document.querySelector(".nav-menu");
+const closeBtn = document.querySelector(".close-nav");
+hamburger.addEventListener("click", function () {
+  headerMobile.classList.add("mobile-active");
+  hamburger.style.display = "none";
+  closeBtn.style.display = "block";
+});
+closeBtn.addEventListener("click", function () {
+  headerMobile.classList.remove("mobile-active");
+  hamburger.style.display = "block";
+  closeBtn.style.display = "none";
+});
+
+window.addEventListener("resize", function (event) {
+  if (event.target.innerWidth > 1200) {
+    hamburger.style.display = "none";
+    closeBtn.style.display = "none";
+  } else {
+    hamburger.style.display = "block";
+    headerMobile.classList.remove("mobile-active");
+  }
+});
