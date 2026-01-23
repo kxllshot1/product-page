@@ -368,6 +368,7 @@ main {
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
+  align-items: start;
   opacity: 0;
   pointer-events: none;
   transition: all 0.25s ease-in-out;
@@ -380,7 +381,6 @@ main {
   position: sticky;
   top: 200px;
   border-radius: 10px;
-  /* align-self: flex-start; */
 }
 
 .active-overlay {
