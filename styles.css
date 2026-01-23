@@ -373,6 +373,7 @@ main {
 }
 
 .overlay-img {
+  height: fit-content;
   -webkit-height: fit-content;
   width: 400px;
   position: sticky;
