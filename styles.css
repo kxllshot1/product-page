@@ -375,12 +375,10 @@ main {
 }
 
 .overlay-img {
-  height: fit-content;
-  -webkit-height: fit-content;
   width: 400px;
-  position: sticky;
-  top: 200px;
   border-radius: 10px;
+  align-self: flex-start;
+  margin-top: 150px;
 }
 
 .active-overlay {
