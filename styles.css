@@ -380,6 +380,7 @@ main {
   position: sticky;
   top: 200px;
   border-radius: 10px;
+  /* align-self: flex-start; */
 }
 
 .active-overlay {
