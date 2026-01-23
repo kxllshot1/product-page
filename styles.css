@@ -9,6 +9,7 @@
   --font-family: "Kumbh Sans";
 }
 
+/* RESET */
 body {
   margin: 0;
   padding: 0;
@@ -48,6 +49,8 @@ button {
   cursor: pointer;
 }
 
+/* Header Styles */
+
 header {
   width: 70vw;
   height: 120px;
@@ -56,6 +59,12 @@ header {
   justify-content: space-between;
   background: var(--white);
   border-bottom: 1px solid var(--grayish-blue);
+}
+
+/* Active States */
+/* Active State for Hamburger Menu Buttons */
+.active-btn {
+  display: block;
 }
 
 .logo-and-nav,
@@ -90,17 +99,9 @@ nav {
   width: 25px;
 }
 
-.active-btn-nav {
-  display: block;
-}
-
 .hamburger-img {
   width: 25px;
   transition: all 0.2s ease-in-out;
-}
-
-.active-btn {
-  display: block;
 }
 
 .pfp {
@@ -210,6 +211,8 @@ nav {
 .mobile-active {
   left: 0;
 }
+
+/* Main Page Styles */
 
 main {
   width: 70vw;
@@ -370,7 +373,10 @@ main {
 }
 
 .overlay-img {
-  width: 600px;
+  height: fit-content;
+  width: 400px;
+  position: sticky;
+  top: 200px;
   border-radius: 10px;
 }
 

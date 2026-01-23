@@ -4,6 +4,7 @@
 
 // DOM Selections
 const body = document.querySelector("body");
+const main = document.querySelector("main");
 const inputProductQuantity = document.querySelector("#quantity");
 const quantityBox = document.querySelector(".product-quantity");
 const btnIncrease = document.querySelector(".increase-quant");
@@ -73,16 +74,7 @@ function cartOps(event) {
 function setOverlay() {
   overlayImg.setAttribute("src", `${mainImg.getAttribute("src")}`);
   overlay.classList.add("active-overlay");
-}
-
-// Remove overlay
-function removeOverlay(event) {
-  if (overlay.classList.contains("active-overlay")) {
-    if (event.target === overlayImg) return;
-    else {
-      overlay.classList.remove("active-overlay");
-    }
-  }
+  fixMobileScroll();
 }
 
 // Cart Open and Close
@@ -119,23 +111,14 @@ cartInside.addEventListener("click", function (event) {
   deleteCart();
 });
 
-// imageBox.addEventListener("click", function (event) {
-//   const target = event.target;
-//   if (target.classList.contains("thumbnail-img")) {
-//     mainImg.setAttribute("src", `${target.getAttribute("data-main-img")}`);
-//   }
-//   allThumbnailImages.forEach((thumbnail) =>
-//     thumbnail.classList.remove("current-img"),
-//   );
-//   if (target.classList.contains("thumbnail-img"))
-//     target.classList.add("current-img");
-// });
-
 mainImg.addEventListener("click", setOverlay);
 
 overlay.addEventListener("click", function (event) {
   if (event.target === overlayImg) return;
-  else overlay.classList.remove("active-overlay");
+  else {
+    overlay.classList.remove("active-overlay");
+    fixMobileScroll();
+  }
 });
 
 /* <!-- Implementing Hamburger Menu Now--> */
@@ -144,26 +127,27 @@ const hamburger = document.querySelector(".nav-menu");
 const closeBtn = document.querySelector(".close-nav");
 hamburger.addEventListener("click", function () {
   headerMobile.classList.add("mobile-active");
-  body.style.overflowY = "hidden";
   hamburger.style.display = "none";
   closeBtn.style.display = "block";
+  fixMobileScroll();
 });
 closeBtn.addEventListener("click", function () {
-  body.style.overflowY = "scroll";
   headerMobile.classList.remove("mobile-active");
   hamburger.style.display = "block";
   closeBtn.style.display = "none";
+  fixMobileScroll();
 });
 
 window.addEventListener("resize", function (event) {
   if (event.target.innerWidth > 1200) {
     hamburger.style.display = "none";
     closeBtn.style.display = "none";
-    body.style.overflowY = "scroll";
   } else {
     hamburger.style.display = "block";
     headerMobile.classList.remove("mobile-active");
+    closeBtn.style.display = "none";
   }
+  fixMobileScroll();
 });
 
 imageBox.addEventListener("click", function (event) {
@@ -175,3 +159,16 @@ imageBox.addEventListener("click", function (event) {
       );
   });
 });
+
+function fixMobileScroll() {
+  if (
+    headerMobile.classList.contains("mobile-active") ||
+    overlay.classList.contains("active-overlay")
+  ) {
+    body.style.overflowY = "hidden";
+    main.style.pointerEvents = "none";
+  } else {
+    body.style.overflowY = "scroll";
+    main.style.pointerEvents = "all";
+  }
+}
